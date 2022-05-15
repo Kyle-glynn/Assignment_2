@@ -19,22 +19,67 @@ void Start()
     cout << "Good luck \n" << endl;
 }
 
+/*
+  int add()
+  {
 
+  }
+
+  int sub()
+  {
+
+  }
+
+ */
 
 int main()
 {
     string colours[] = { "Red", "Black" };
+    int i;
     int number[12] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
     int Credits = 100;
     int Bet;
     Start();
     Sleep(1000);
+
+Enterbet:
+    cout << "\n";
     cout << "How much do you want to bet?\n";
     cin >> Bet;
+
 
     if (Bet > Credits)
     {
         cout << "Can't bet what you don't have";
+        goto Enterbet;
+    }
+
+Entercolour:
+    cout << "\n";
+    cout << "What colour do you want to bet on?\n";
+    cout << "0: red \n" << "1: black \n";
+    cin >> i;
+    cout << colours[i] << endl;
+    if (i > 2)
+    {
+        cout << "Red or Black only\n";
+        goto Entercolour;
+    }
+
+Enternumber:
+    cout << "\n";
+    cout << "What number do you want to bet on?\n";
+    cout << "1 to 12\n";
+    for (int i = 0; i < 1; ++i)
+    {
+        cin >> number[i];
+        cout << number[i] << endl;
+        if (number[i] > 13)
+        {
+            cout << "Only 1 to 12";
+            goto Enternumber;
+        }
+
     }
 
 }
