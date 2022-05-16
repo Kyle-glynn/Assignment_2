@@ -1,0 +1,4 @@
+﻿  Roulette.cpp
+D:\Github projects\Assignment_3\Roulette\Roulette\Roulette.cpp(52,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Github projects\Assignment_3\Roulette\Roulette\Roulette.cpp(89,9): warning C4102: 'placebet': unreferenced label
+  Roulette.vcxproj -> D:\Github projects\Assignment_3\Roulette\Debug\Roulette.exe
