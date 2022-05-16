@@ -70,23 +70,26 @@ int Sub(int a, int b)
     return (a - b);
 }
 
-int main()
+void totalamount(int i)
 {
-   
-    Start();
-    Sleep(1000);
+    cout << i << " " << "Credits\n";
+}
 
+void game()
+{
     string colour[] = { "Red", "Black" };
     int number[13] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 
     int Bet, i, o;
 
+    int Credits;
 
-    int Credits = 100;
-    int total;
+    Credits = 100;
 
-    total = Credits;
-placebet:
+
+    while (true)
+    {
+
     cout << "How much would you like to bet?\n";
     cin >> Bet;
 
@@ -102,11 +105,10 @@ placebet:
     cout << "What number do you want to bet on?\n";
     cin >> o;
 
-
     int x, y, z{};
     for (x = 0; x < 2; x++)
     {
-        for (y = 0; y < 12; y++)
+        for (y = 0; y < 13; y++)
         {
             output[z].Pcolour = colour[i];
             output[z].Pnumber = number[o];
@@ -117,17 +119,42 @@ placebet:
     }
     spin();
     printnumber();
+    
     if (x == i || y == o)
     {
-        total = Add(Credits, Bet);
-        cout << total << " " << "Credits\n";
-
+        Credits += Bet;
+        totalamount(Credits);
     }
-    else
+    else if(x == i)
     {
-        total = Sub(Credits, Bet);
-        cout << total << " " << "Credits\n";
+        Credits += 25;
+        totalamount(Credits);
+    }
+    else if (y == o)
+    {
+        Credits += 25;
+        totalamount(Credits);
+    }
+    else if (x != i)
+    {
+        Credits -= Bet;
+        totalamount(Credits);
+    }
+    else if (y != o)
+    {
 
     }
-
+    {
+        Credits -= Bet;
+        totalamount(Credits);
+    }
+    }
 }
+
+int main()
+{
+    Start();
+    Sleep(1000);
+    game();
+}
+
