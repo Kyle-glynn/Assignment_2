@@ -122,6 +122,7 @@ void game() // game output
             cout << "You can only eneter red and black\n";
             goto enetercolour;
         }
+        
         cout << endl;
     eneternumber:
         cout << "\n";
@@ -151,7 +152,7 @@ void game() // game output
         printnumber();
 
         cout << "Want to try again?\n";
-        cout << "1:Playagin\n" << "2:finish\n";
+        cout << "1:Play again\n" << "2:finish\n";
        
 }
 
